@@ -10,9 +10,15 @@
     </div>
 
     <div>
-      <p>published: 07.30.2016, 3:35</p>
-      <h2><a href="">My first post</a></h2>
-      <p>Still plugging away at the workshop</p>
+      <h1><a href="/">Django Girls Blog</a></h1>
     </div>
+
+    {% for post in posts %}
+      <div>
+        <p>published: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+      </div>
+    {% endfor %}
   </body>
 </html>
